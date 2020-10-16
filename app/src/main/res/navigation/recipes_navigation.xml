@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/recipes_navigation"
+    app:startDestination="@id/recipesListScreen">
+    <fragment
+        android:id="@+id/recipesListScreen"
+        android:name="com.ibrahim.mytask.view.RecipesListScreen"
+         >
+        <action
+            android:id="@+id/action_recipesDetailsScreen"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/recipesDetailsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipesDetailsScreen"
+        android:name="com.ibrahim.mytask.view.RecipesDetailsScreen"
+        android:label="RecipesDetailsScreen" >
+        <action
+            android:id="@+id/action_recipesDetailsScreen_to_recipesListScreen"
+            app:destination="@id/recipesListScreen" />
+        <argument
+            android:name="recipesUid"
+            android:defaultValue="0"
+            app:argType="integer"/>
+    </fragment>
+</navigation>

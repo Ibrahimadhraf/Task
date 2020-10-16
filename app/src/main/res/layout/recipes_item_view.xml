@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="recipe"
+            type="com.ibrahim.mytask.model.RecipesModel" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@drawable/card_background"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@{recipe.name}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+<androidx.cardview.widget.CardView
+    android:id="@+id/profile_image"
+    android:layout_width="0dp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    android:layout_height="@dimen/_100sdp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.449"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" >
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:imageUrl="@{recipe.image}"
+        android:src="@drawable/splash" />
+    <TextView
+        android:id="@+id/uuId"
+        android:visibility="gone"
+        android:text="@{String.valueOf(recipe.uuId)}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
